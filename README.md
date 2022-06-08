@@ -21,4 +21,6 @@ En este repositorio se encuentran las entregas con resultados correspondientes a
    - [x] pandas
    - [x] seaborn
    - [x] numpy
-   - [x] 
+   - [x] missingno
+   - [x] plotly
+   - [x] sqlalchemy
