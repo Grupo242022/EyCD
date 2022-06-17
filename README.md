@@ -53,6 +53,7 @@ Para la limpieza de la base de datos realizamos los siguientes pasos:
 
   ## Características seleccionadas
   En general tomamos las siguientes características:
+  
   ![image](https://user-images.githubusercontent.com/11649711/174290630-f3463f34-645d-4f76-b188-5fdb5ccd8fd2.png)
  
   ### Características categóricas
@@ -82,19 +83,28 @@ Para la limpieza de la base de datos realizamos los siguientes pasos:
   ### Transformaciones
   1. Utilizamos DictVetorizer para codificar las variables categóricas y lo convertimos en un DataFrame de filas:12138 y columnas: 378 (dataframe: df_melb_enc).
   2. Las columnas `YearBuilt` y `BuildingArea` fueron imputadas utilizando el algoritmo: `KNeighborsRegressor()`. 
-  2.1. Se realizaron pruebas sin escalar (y solo usando para imputar las columnas:). Por ejemplo (`YearBuilt_modificado` vs .`YearBuilt_original`):    
+  2.1. Se realizaron pruebas sin escalar (y solo usando para imputar las columnas:). Por ejemplo (`YearBuilt_modificado` vs .`YearBuilt_original`):
+  
      ![image](https://user-images.githubusercontent.com/11649711/174295448-b90044cd-9b44-4342-b2fb-4fc5e7c51acc.png)
-  3. Todas las características numéricas fueron escaladas. Se analizarón dos escaladores: `RobustScaler()` y `MinMaxScaler()`.     
+     
+  3. Todas las características numéricas fueron escaladas. Se analizarón dos escaladores: `RobustScaler()` y `MinMaxScaler()`.
+       
   3.1. Combinando `RobustScaler()` e imputación por `KNeighborsRegressor()` para las columnas - `YearBuilt` y `BuildingArea`. 
   En este ejemplo se muestra `YearBuilt`(modificado sin escalar, con escalador RobustScaler() y datos originales).
+  
   ![image](https://user-images.githubusercontent.com/11649711/174295858-0722a177-fb95-4e51-872c-f58601eb7b90.png)
-  3.2. Combinando `MinMaxScaler()` e imputación por `KNeighborsRegressor()` para las columnas - `YearBuilt` y `BuildingArea`. 
-  En este ejemplo se muestra `YearBuilt`(modificado sin escalar, con escalador MinMaxScaler() y datos originales).  
+  
+  3.2. Combinando `MinMaxScaler()` e imputación por `KNeighborsRegressor()` para las columnas - `YearBuilt` y `BuildingArea`.
+  
+  En este ejemplo se muestra `YearBuilt`(modificado sin escalar, con escalador MinMaxScaler() y datos originales).
+  
   ![image](https://user-images.githubusercontent.com/11649711/174296287-23c786fd-e88a-4046-a0ab-86ba9afc728e.png)
+  
   4. Aplicamos `PCA` para obtener $n$ componentes principales de la matriz. Construimos un conjunto de datos que solo contara con las variables numéricas continuas. A su vez, escalamos y estandarizamos a la matriz original (dataframe: pca_data).
   5. Obtuvimos el porcentaje de varianza explicada por cada componente (modelo_pca.explained_variance_ratio_).
   6. Al contar con el modelo_pca, usamos el método `transform()`, reducimos la dimensionalidad de las nuevas observaciones (dataframe: proyecciones). 
   7. Graficamos las componentes principales:
+  
  ![image](https://user-images.githubusercontent.com/11649711/174299545-888b48f0-8042-46ea-aed6-5afa70563262.png)
  
   ### Composición del resultado y Datos aumentados
