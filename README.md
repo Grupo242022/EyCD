@@ -56,7 +56,7 @@ Para la limpieza de la base de datos realizamos los siguientes pasos:
   ![image](https://user-images.githubusercontent.com/11649711/174290630-f3463f34-645d-4f76-b188-5fdb5ccd8fd2.png)
  
   ### Características categóricas
-  categorical_cols = ['Type', 'Suburb','Date'] 
+ 
   1. Type: tipo de propiedad. 3 valores posibles.
   2. Suburb: Suburbio en donde se encuentra la propiedad. 304 valores posibles.
   3. Date: Fecha. Clase datetime. 
