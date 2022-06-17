@@ -97,10 +97,13 @@ Para la limpieza de la base de datos realizamos los siguientes pasos:
   7. Graficamos las componentes principales:
  ![image](https://user-images.githubusercontent.com/11649711/174299545-888b48f0-8042-46ea-aed6-5afa70563262.png)
  
-  ### Composición del resultado y Datos aumentados:
+  ### Composición del resultado y Datos aumentados
+  
     1. A partir dela base de datos original, segmentamos el conjunto en dos:
+    
    - [x] melb_df_num -> Data frame con variables númericas
    - [x] melb_df_cat -> Data frame con variables categóricas
+  
     2. Aplicamos el Encode usando el método de `OneHotEncoder()` sobre la matriz con datos categóricos.
     3. Incorporamos a la matriz con datos numéricos.
     4. Añadimos las variables imputadas en el punto 2 ('buildingArea_imp', 'yearBuilt_imp', data frame: inver_imputa).
